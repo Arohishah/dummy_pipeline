@@ -1,0 +1,29 @@
+pipeline{
+	agent any;
+	environment{
+		PROJECT_NAME JAVA	
+	}
+	stages{
+		stage('Setup'){
+			steps{
+				cleanWS();		
+				sh 'echo setting up workspace'
+			}
+		}
+		stage('Checkout SCM'){
+			steps{
+				sh 'checkout scm'
+			}
+		}
+		stage('Compile'){
+			steps{
+				sh 'chmod +x app.sh'
+			}
+		}
+		stage('Artificats'){
+			steps{
+				sh 'chmod +x app.sh'
+			}
+		}
+	}
+}
